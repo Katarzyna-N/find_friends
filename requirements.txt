@@ -1,5 +1,4 @@
-json
 pandas
+plotly.express
 streamlit
 pycaret.clustering
-plotly.express
