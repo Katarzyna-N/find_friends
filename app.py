@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd 
 from pycaret.clustering import load_model, predict_model
 import plotly.express as px
-from PIL import Image
 
 MODEL_NAME = "welcome_survey_clustering_pipeline_v2"
 DATA = "welcome_survey_simple_v2.csv"
@@ -64,7 +63,7 @@ c0,c1= st.columns(2)
 
 with c0:
 
-    st.header(f"Najbliżej Ci do grupy /n {predicted_cluster_data['name']}")
+    st.header(f"Najbliżej Ci do grupy {predicted_cluster_data['name']}")
     st.markdown(predicted_cluster_data['description'])
     same_cluster_df = all_df[all_df["Cluster"] == predicted_cluster_id]
     st.metric("Liczba twoich znajomych", len(same_cluster_df))
